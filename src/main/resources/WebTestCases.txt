@@ -1,0 +1,27 @@
+    @Test
+    void yandexSearch() {
+        open("https://ya.ru/");
+        $("#text").setValue("Selenide");
+        $("button[type='submit']").click();
+        $$("li.serp-item").shouldHave(CollectionCondition.size(10));
+    }
+
+ТЕСТОВЫЕ ДАННЫЕ [
+["Selenide - "Selenide - это фреймворк для автоматизированного тестирования"],
+["JUnit" - "A programmer-oriented testing framework for Java"]
+]
+
+1) ЗАГОЛОВОК
+Проверка числа результатов поиска в Яндексе для запроса [test_data][0]
+2) КРИТИЧНОСТЬ
+- значительный
+3) ПРЕДУСЛОВИЯ (опционально)
+
+4) ШАГИ
+- Открыть браузер
+- В браузере открыть страницу "https://ya.ru/"
+- ввести в поле поиска [test_data][0]
+- нажать кнопку "Найти"
+
+5) Ожидаемый результат
+- В результатах поиска отобразилось 10 карточек, и в первой их них есть слово [test_data][1]
