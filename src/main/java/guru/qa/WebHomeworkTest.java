@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class WebHomeworkTest {
-    // ТЕСТОВЫЕ ДАННЫЕ
+
     @ValueSource(strings = {"Компьютер", "Кресло"})
     @ParameterizedTest(name = "Проверка числа результатов поиска на сайте Авито для запроса {0}")
     void yandexSearchCommonTest(String testData) {
@@ -30,8 +30,7 @@ public class WebHomeworkTest {
 
     @CsvSource(value = {
             "Компьютер, Брал пару месяцев назад, использовал только для работы",
-            "Кресло, Компьютерное кресло новое"
-    })
+            "Кресло, Компьютерное кресло новое"})
     @ParameterizedTest(name = "Проверка числа результатов поиска на сайте Авито для запроса {0}")
     void yandexSearchCommonTestWithDifferentExpectedText(String searchQuery, String expectedText) {
         open("https://ya.ru/");
