@@ -59,7 +59,7 @@ public class WebHomeworkTest {
                 .shouldHave(CollectionCondition.texts(buttonsTexts));
     }
 
-    @EnumSource(Locale locale);
+    @EnumSource(Locale.class);
     @ParameterizedTest
     void checkLocaleTest(Locale locale){
     open("https://elmorelab.com/");
