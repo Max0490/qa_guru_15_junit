@@ -45,7 +45,8 @@ public class WebHomeworkTest {
     static Stream<Arguments>selenideSiteButtonsText() {
         return Stream.of(
                 Arguments.of(Locale.EN, List.of("Home", "Download", "Donation", "My account", "Crew", "Forum", "Database", "Streams", "Wall of Glory")),
-                Arguments.of(Locale.RU, List.of("Главная", "Скачать", "Донат", "Мой кабинет", "Команда", "Форум", "База знаний", "Стримы", "Стена Славы",))
+                Arguments.of(Locale.RU, List.of("Главная", "Скачать", "Донат", "Мой кабинет", "Команда", "Форум",
+                        "База знаний", "Стримы", "Стена Славы"))
         );
     }
 
@@ -58,7 +59,7 @@ public class WebHomeworkTest {
                 .shouldHave(CollectionCondition.texts(buttonsTexts));
     }
 
-    @EnumSource(Locale.class);
+    @EnumSource(Locale.class)
     @ParameterizedTest
     void checkLocaleTest(Locale locale){
     open("https://elmorelab.com/");
